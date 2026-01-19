@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Bank App</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            justify-content: center;
+            justify-items: auto;
+        }
+        h1{
+            font-size: 36px;
+        }
+         .container {
+            width: 150px;
+            background-color:beige;
+            margin: 100px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .deposit{
+            background-color: blue;
+            margin-right: 10px;
+        
+
+        }
+        .buttons{
+            margin-top: 10px;
+        }
+        .withdraw{
+            background-color: red;
+        }
+        .message{
+            background-color: white;
+            margin-right: auto;
+        }
+
+    </style>
+    </head>
+    <div class="Bank container"
+    <h1 id="balance">Balance: $1000</h1>
+      <label>Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <div class="buttons">
+        <button class="deposit" onclick="deposit()">Deposit</button>
+        <button class="withdraw" onclick="withdraw()">Withdraw</button>
+    </div>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+
+<style>
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg: #0f172a;
+    --card-bg: linear-gradient(145deg, #111827, #020617);
+    --text: #ffffff;
+    --border: rgba(255,255,255,0.15);
+    --btn-bg: #1f2937;
+}
+
+/* LIGHT MODE */
+.light {
+    --bg: #f9fafb;
+    --card-bg: #ffffff;
+    --text: #111827;
+    --border: rgba(0,0,0,0.1);
+    --btn-bg: #e5e7eb;
+}
+
+/* ================= BASE STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+}
+
+/* ================= GRID LAYOUT ================= */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 30px;
+}
+
+/* ================= HEADER ================= */
+.header {
+    grid-column: span 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 32px;
+}
+
+.toggle-btn {
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--text);
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body id="theme">
+
+<div class="dashboard">
+
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+        <button class="toggle-btn" onclick="toggleTheme()">🌙 Light Mode</button>
+    </div>
+
+    <div class="card">Navigation</div>
+    <div class="card">Analytics</div>
+    <div class="card">Users</div>
+    <div class="card">Settings</div>
+
+</div>
+
+<script>
+function toggleTheme() {
+    const body = document.getElementById("theme");
+    const btn = document.querySelector(".toggle-btn");
+
+    body.classList.toggle("light");
+
+    btn.innerText = body.classList.contains("light")
+        ? "🌙 Dark Mode"
+        : "☀️ Light Mode";
+}
+</script>
+
+</body>
+</html>
